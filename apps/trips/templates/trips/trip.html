@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>{{trip.destination}} Details</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'trips/css/trip.css' %}" charset="utf-8">
+      <script src="{% static 'validate/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'trips/js/trip.js' %}"></script>
+   </head>
+   <body>
+       <div id="navbar">
+           <div>
+               {% if trip.users.all.0.id != user.id  %}
+                    <h1>Want to join the trip, {{user.first_name}}?</h1>
+                {% else %}
+                    <h1>Here are your trip details, {{user.first_name}} :)</h1>
+               {% endif %}
+            </div>
+            <div>
+                <span><a href="{% url 'trips:index' %}">Home</a><a href="{% url 'validate:index' %}">Logout</a></span>
+            </div>
+       </div>
+       <div id="itinerary">
+           <h2>{{trip.destination | title}}</h2>
+           <p>Planned By: {{trip.users.all.0.first_name}} {{trip.users.all.0.last_name}}</p>
+           <p>Description: {{trip.description}}</p>
+           <p>Travel Date From: {{trip.travel_date_from | date:"F j, Y"}}</p>
+           <p>Travel Date To: {{trip.travel_date_to | date:"F j, Y"}}</p>
+       </div>
+
+       {% if group %}
+       <div id="group">
+           <h2>Other people joining the trip:</h2>
+           {% for traveler in group %}
+           <p>{{traveler.first_name}} {{traveler.last_name}}</p>
+           {% endfor %}
+       </div>
+       {% endif %}
+   </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Travel Buddy</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'validate/css/index.css' %}" charset="utf-8">
+      <script src="{% static 'validate/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'validate/js/index.js' %}"></script>
+   </head>
+   <body>
+       <h1>Welcome to Travel Buddy</h1>
+     <div id="select"><h2>Select Login or Register:</h2><button type="button">Login</button><button type="button">Register</button></div>
+     <div id="register" hidden>
+         <h2>Registration:</h2>
+         <form action='/register' method='POST'>{% csrf_token %}
+             <label for="fname">First Name:</label><input type='text' name='fname' value="{{fname}}">
+             <label for="lname">Last Name:</label><input type='text' name='lname' value="{{lname}}">
+             <label for="email">Email:</label><input type='email' name='email' value="{{email}}" placeholder="username">
+             <label for"bdate">Birthdate:</label><input type="date" name="bdate" value="{{bdate}}" required>
+             <label for="password">Password:</label><input type='password' name='password' value="{{password}}">
+             <label for="cpassword">Confirm Password:</label><input type='password' name='cpassword' value="{{cpassword}}">
+             <input class="button" type='submit' value='Register'><input class="button" type="reset" value="Reset">
+         </form>
+         {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div id="login" hidden>
+        <h2>Login:</h2>
+        <form action='/login' method='POST'>{% csrf_token %}
+            <label for="email">Email:</label><input type='email' name='email' value="{{email}}" placeholder="username">
+            <label for="password">Password:</label><input type='password' name='password' value="{{password}}">
+            <input class="button" type='submit' value='Login'><input class="button" type="reset" value="Reset">
+        </form>
+        {% if messages %}
+           <ul class="messages">
+               {% for message in messages %}
+                   <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+               {% endfor %}
+           </ul>
+       {% endif %}
+    </div>
+    <span hidden>{{error}}</span>
+   </body>
+</html>

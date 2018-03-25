@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Travel Buddy Home</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'trips/css/trips.css' %}" charset="utf-8">
+      <script src="{% static 'validate/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'trips/js/trips.js' %}"></script>
+   </head>
+   <body>
+       <div id="navbar">
+           <div><h1>Hello, {{user.first_name}}!</h1></div>
+            <div><span><a href="{% url 'validate:index' %}">Logout</a></span></div>
+       </div>
+       <div id="my_trips">
+           <h2>Your Trip Schedules:</h2>
+           {% if user.trips.all %}
+           <table>
+               <thead>
+                   <tr><th>Destination:</th><th>Trip Start Date:</th><th>Trip End Date:</th><th>Plan:</th></tr>
+               </thead>
+               <tbody>
+                   {% for trip in user.trips.all %}
+                   <tr>
+                       <td><a href="{% url 'trips:show' trip_id=trip.id %}">{{trip.destination | title}}</a></td><td>{{trip.travel_date_from | date:"F j, Y"}}</td>
+                       <td>{{trip.travel_date_from | date:"F j, Y"}}</td><td>{{trip.description | truncatechars:20}}</td>
+                   </tr>
+                   {% endfor %}
+               </tbody>
+           </table>
+            {% endif %}
+       </div>
+       <div id="others_trips">
+           <h2>Other User's Travel Plans:</h2>
+           {% if trips %}
+           <table>
+               <thead>
+                   <tr><th>Destination:</th><th>Trip Start Date:</th><th>Trip End Date:</th><th>Plan:</th><th>Do You Want to Join:</th></tr>
+               </thead>
+               <tbody>
+                   {% for trip in trips %}
+                   <tr>
+                       <td><a href="{% url 'trips:show' trip_id=trip.id %}">{{trip.destination | title}}</a></td><td>{{trip.travel_date_from | date:"F j, Y"}}</td>
+                       <td>{{trip.travel_date_from | date:"F j, Y"}}</td><td>{{trip.description | truncatechars:20}}</td>
+                       <td><a href="{% url 'trips:join' trip_id=trip.id %}">Join</a></td>
+                   </tr>
+                   {% endfor %}
+               </tbody>
+           </table>
+            {% endif %}
+       </div>
+       <a href="{% url 'trips:add' %}" id="new">Add Travel Plans</a>
+   </body>
+</html>

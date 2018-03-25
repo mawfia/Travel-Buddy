@@ -1,0 +1,32 @@
+#navbar div{
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+
+#navbar span{
+    margin: 20px 0px 0px 65%;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    width: 65%;
+}
+
+thead{
+    background-color: #b8b8b8;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+#new{
+    margin: 30px 0px 0px 60%;
+    display: block;
+}

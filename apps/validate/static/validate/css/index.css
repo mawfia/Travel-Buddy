@@ -1,0 +1,12 @@
+#register, #login{
+    width: 400px;
+}
+
+label{
+    display: inline-block;
+    width: 150px;
+}
+
+input:not(.button){
+    width: 200px;
+}

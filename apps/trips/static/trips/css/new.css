@@ -1,0 +1,50 @@
+#navbar div{
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+
+#navbar span{
+    margin: 20px 0px 0px 65%;
+    display: inline-block;
+}
+
+#navbar a{
+    margin-right: 15px;
+}
+
+form{
+    width: 600px;
+}
+
+label, input, textarea{
+    margin-top: 10px;
+}
+
+label{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+form input:nth-of-type(2){
+    width: 250px;
+}
+
+form input:nth-of-type(3){
+    margin-right: 60px;
+}
+
+textarea{
+    width: 250px;
+    height: 100px;
+    resize: none;
+}
+
+#submit{
+    text-align: center;
+}
+
+#submit input{
+    width: auto;
+}

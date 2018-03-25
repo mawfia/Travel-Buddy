@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Add New Trip</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'trips/css/new.css' %}" charset="utf-8">
+      <script src="{% static 'validate/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'trips/js/new.js' %}"></script>
+   </head>
+   <body>
+       <div id="navbar">
+           <div><h1>Hello, {{user.first_name}}!</h1></div>
+            <div><span><a href="{% url 'trips:index' %}">Home</a><a href="{% url 'validate:index' %}">Logout</a></span></div>
+       </div>
+       <h2>Add a New Trip:</h2>
+       <form action='create' method='POST'>{% csrf_token %}
+           <label id="destination"><b>Destination:</b></label>
+           <input type='text' name='destination' value="{{destination}}">
+           <label id="description"><b>Description:</b></label>
+           <textarea name="description">{{description}}</textarea>
+           <label id="date_from"><b>Travel Date From:</b></label>
+           <input type='date' name='date_from' value="{{date_from}}">
+           <label id="date_to"><b>Travel Date To:</b></label>
+           <input type='date' name='date_to' value="{{date_to}}">
+           <div id="submit"><input type='submit' value='Add'><input type="reset"></div>
+           {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+       </form>
+   </body>
+</html>
