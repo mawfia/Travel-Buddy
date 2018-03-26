@@ -44,7 +44,7 @@ TECHNOLOGY USED:
 This web application may be viewed at: http://54.201.84.245
 
 Current Maintainer:
- * Michael Williams
+ * M. Andrew Williams
 
 This project has been sponsored by:
 Coding Dojo
