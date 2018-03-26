@@ -1,4 +1,4 @@
-# Belt Exam (Python/Django) - Travel Buddy
+ Belt Exam (Python/Django) - Travel Buddy
 Individual Belt Exam Project created 24 March 2018 and completed 25 March 2018
 
 INTRODUCTION:
@@ -19,7 +19,7 @@ second belt exam we were given 48 hours to start and finsh an application includ
 5. Ability to add new travel plans. Validation applies. The newly added travel plan should appear on logged user's Trip schedule table.
 5. You must be able to deploy your work to Amazon EC2 and provide the IP address or subdomain/domain name to where your work has been deployed.
 
-![Image of Yaktocat](https://drive.google.com/open?id=1M_PGyqSgfXsep1vhC2NFav2MWrzVUJ42)
+![Image of Yaktocat](http://mawfia.com/python_django_belt.jpg)
 
 
 HOW TO USE:
