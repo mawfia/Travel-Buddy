@@ -19,7 +19,7 @@ second belt exam we were given 48 hours to start and finsh an application includ
 5. Ability to add new travel plans. Validation applies. The newly added travel plan should appear on logged user's Trip schedule table.
 5. You must be able to deploy your work to Amazon EC2 and provide the IP address or subdomain/domain name to where your work has been deployed.
 
-![Image of Yaktocat](http://mawfia.com/python_django_belt.jpg)
+![Image of Yaktocat](http://mawfia.com/documents/python_django_belt.jpg)
 
 
 HOW TO USE:
