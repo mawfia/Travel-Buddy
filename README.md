@@ -1,4 +1,4 @@
-Belt Exam (Python/Django) - Travel Buddy
+yBelt Exam (Python/Django) - Travel Buddy
 Individual Belt Exam Project created 24 March 2018 and completed 25 March 2018
 
 INTRODUCTION:
@@ -9,7 +9,7 @@ INTRO:
 --------------------
 
 -This application was built as part of a Coding Dojo belt exam culminating 2 months of material including HTML, CSS, JavaScript, 
-jQuery, Ajax, Python, Flask, Django and the various was of using these technologies to develop a modern day application.  As the 
+jQuery, Ajax, Python, Flask, Django and the various ways of using these technologies to develop a modern day application.  As the 
 second belt exam we were given 48 hours to start and finsh an application including testing and deployment with the following requirements:
 
 1. Login and Registration with validations. Validation errors should appear on the page. Logout as well. Password should be at least 8 characters.
