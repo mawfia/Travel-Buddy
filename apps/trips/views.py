@@ -22,7 +22,7 @@ def show(request, trip_id):
     context = {
                 "user": user,
                 "trip": trip,
-                "group": trip.users.all().exclude(id=trip.users.first().id)
+                "group": trip.users.all().exclude(id=user.id).exclude(id=trip.users.first().id)
               }
     return render(request, 'trips/trip.html', context)
 

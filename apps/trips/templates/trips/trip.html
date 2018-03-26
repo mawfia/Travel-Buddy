@@ -10,10 +10,10 @@
    <body>
        <div id="navbar">
            <div>
-               {% if trip.users.all.0.id != user.id  %}
-                    <h1>Want to join the trip, {{user.first_name}}?</h1>
-                {% else %}
+               {% if user in trip.users.all %}
                     <h1>Here are your trip details, {{user.first_name}} :)</h1>
+                {% else %}
+                    <h1>Want to join the trip, {{user.first_name}}?</h1>
                {% endif %}
             </div>
             <div>
