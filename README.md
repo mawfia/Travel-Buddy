@@ -3,7 +3,7 @@ Individual Belt Exam Project created 24 March 2018 and completed 25 March 2018
 
 INTRODUCTION:
 --------------------
-This is a Spring/MVC CRUD project designed, built, and deployed to cloud services over a period of 14 days.
+This is a Django/Python project designed, built, and deployed to cloud services over a period of 2 days.
 
 INTRO:
 --------------------
