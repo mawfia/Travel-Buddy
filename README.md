@@ -1,5 +1,5 @@
-# I Am Legend 2
-Individual Project created 18 November 2016
+# Belt Exam (Python/Django) - Travel Buddy
+Individual Belt Exam Project created 24 March 2018 and completed 25 March 2018
 
 INTRODUCTION:
 --------------------
