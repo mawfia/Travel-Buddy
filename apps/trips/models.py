@@ -9,18 +9,22 @@ import time
 class TripManager(models.Manager):
     def validator(self, postData):
         errors = {}
-        date_from = datetime.strptime(postData['date_from'], "%Y-%m-%d")
-        date_to = datetime.strptime(postData['date_to'], "%Y-%m-%d")
         today = datetime.today()
+        if len(postData['date_from']) > 0: date_from = datetime.strptime(postData['date_from'], "%Y-%m-%d")
+        else: date_from = None
+
+        if len(postData['date_to']) > 0: date_to = datetime.strptime(postData['date_to'], "%Y-%m-%d")
+        else: date_to = None
+
         if len(postData['destination']) == 0: errors["destination1"] = "Destination field cannot be empty"
         if Trip.objects.filter(destination=postData['destination'].lower()): errors["destination2"] = "Trip already exists"
         if len(postData['description']) == 0: errors['description'] = "Description field cannot be empty"
 
-        if 'date_from' not in postData: errors['date_from1'] = "Beginning travel date missing"
-        elif date_from < datetime.today(): errors['date_from2'] = "Beginning travel date must start tomorrow or later"
+        if date_from == None: errors['date_from1'] = "Beginning travel date missing"
+        elif date_from < today: errors['date_from2'] = "Beginning travel date must start tomorrow or later"
 
-        if 'date_to' not in postData: errors['date_to1'] = "Ending travel date missing"
-        elif ('date_from' in postData) and (date_to <= date_from): errors['date_to2'] = "Ending travel date must be after beginning travel date"
+        if date_to == None: errors['date_to1'] = "Ending travel date missing"
+        elif (date_from != None) and (date_to <= date_from): errors['date_to2'] = "Ending travel date must be after beginning travel date"
 
         return errors
     def edit(self, postData):
