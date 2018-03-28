@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from apps.validate.models import User
 from apps.trips.models import Trip
 from django.contrib import messages
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 def index(request):
     if 'username' not in request.session: return redirect(reverse('validate:index'))
@@ -22,7 +22,7 @@ def show(request, trip_id):
     context = {
                 "user": user,
                 "trip": trip,
-                "group": trip.users.all().exclude(id=trip.users.first().id)
+                "group": trip.users.all().exclude(id=user.id).exclude(id=trip.users.first().id)
               }
     return render(request, 'trips/trip.html', context)
 

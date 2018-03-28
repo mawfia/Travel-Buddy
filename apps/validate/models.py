@@ -25,10 +25,14 @@ class UserManager(models.Manager):
         return errors
     def login(self, postData):
         errors = {}
-        if not User.objects.filter(email=postData['email']):
-            errors["email"] = "Username/email does not exist"
+        if 'email' not in postData: errors['email'] = "No email address entered."
+        elif not User.objects.filter(email=postData['email']):
+            errors['email'] = "Username/email does not exist"
+        if 'password' not in postData: errors['password'] = "No password entered."
+        elif not PASSWORD_REGEX.match(postData['password']):
+            errors['password'] = "Password must be 8-16 characters, and contain atleast one number and uppercase letter."
         elif not bcrypt.checkpw(postData['password'].encode(), User.objects.filter(email=postData['email'])[0].password.encode()):
-            errors['password'] = "Invalid password entered"
+            errors['password'] = "Invalid password entered."
         return errors
 class User(models.Model):
     first_name = models.CharField(max_length=255)

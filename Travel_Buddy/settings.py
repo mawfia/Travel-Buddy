@@ -25,7 +25,7 @@ SECRET_KEY = 'm+bwd%1g)1+l2=o#zmud6oey&v2_do2j@sc-1pv-^a9b7w&zaj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['35.161.236.125']
+ALLOWED_HOSTS = ['54.201.84.245']
 
 
 # Application definition
@@ -75,14 +75,15 @@ WSGI_APPLICATION = 'Travel_Buddy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dj_travel_buddy_db',
-	'USER': 'root',
-	'PASSWORD': 'root',
-	'HOST': 'localhost',
-	'PORT': '3306'
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
@@ -124,4 +125,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")

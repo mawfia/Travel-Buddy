@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from apps.validate.models import User
 from django.contrib import messages
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 import bcrypt
 
 def index(request):

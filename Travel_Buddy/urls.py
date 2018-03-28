@@ -17,6 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('apps.validate.urls', namespace='validate')),
-    url(r'^travels/', include('apps.trips.urls', namespace='trips'))
+    url(r'^', include(('apps.validate.urls', 'Travel_Buddy'), namespace='validate')),
+    url(r'^travels/', include(('apps.trips.urls','Travel_Buddy'), namespace='trips'))
 ]
