@@ -1,6 +1,8 @@
 Coding Dojo Belt Exam (Python/Django) - Travel Buddy
 Individual Belt Exam Project created 24 March 2018 and completed 25 March 2018
 
+**19 November 18 Update - found bug that results in end date showing as the beginning date - will be fixed soon **
+
 INTRODUCTION:
 --------------------
 This is a Django/Python project designed, built, and deployed to cloud services over a period of 2 days.
