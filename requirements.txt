@@ -1,5 +1,5 @@
 altgraph==0.10.2
-arrow==0.12.1
+arrow==0.15.1
 awscli==1.14.32
 backports.functools-lru-cache==1.5
 bdist-mpkg==0.5.0
